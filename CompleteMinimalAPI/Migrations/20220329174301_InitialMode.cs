@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CompleteMinimalAPI.Migrations
 {
-    public partial class InitialModel : Migration
+    public partial class InitialMode : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,10 @@ namespace CompleteMinimalAPI.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Name = table.Column<string>(type: "varchar(200)", nullable: false),
-                    Document = table.Column<string>(type: "varchar(14)", nullable: false),
+                    Email = table.Column<string>(type: "varchar(50)", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "varchar(50)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    LastUpdateDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Active = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>

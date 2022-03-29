@@ -12,7 +12,8 @@ public class MinimalContextDb : DbContext
     {
         modelBuilder.Entity<Provider>().HasKey(p => p.Id);
         modelBuilder.Entity<Provider>().Property(p => p.Name).IsRequired().HasColumnType("varchar(200)");
-        modelBuilder.Entity<Provider>().Property(p => p.Document).IsRequired().HasColumnType("varchar(14)");
+        modelBuilder.Entity<Provider>().Property(p => p.Email).IsRequired().HasColumnType("varchar(50)");
+        modelBuilder.Entity<Provider>().Property(p => p.PhoneNumber).IsRequired().HasColumnType("varchar(50)");
         modelBuilder.Entity<Provider>().ToTable("Providers");
         base.OnModelCreating(modelBuilder);
     }

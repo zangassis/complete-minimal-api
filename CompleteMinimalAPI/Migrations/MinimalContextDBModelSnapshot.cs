@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CompleteMinimalAPI.Migrations
 {
     [DbContext(typeof(MinimalContextDb))]
-    partial class MinimalContextDBModelSnapshot : ModelSnapshot
+    partial class MinimalContextDbModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -26,13 +26,23 @@ namespace CompleteMinimalAPI.Migrations
                     b.Property<bool>("Active")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Document")
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("varchar(14)");
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime>("LastUpdateDate")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(200)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
